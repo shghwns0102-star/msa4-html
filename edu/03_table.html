@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Tag</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- table 표를 만드는 태그, 표전체를 감싸는데 사용 -->
+  <table>
+    <!-- caption 태그: 표의 제목이나 설명을 작성하는 태그 -->
+    <caption>성적표</caption>
+
+    <!-- colgroup 태그: 열을 그룹화 해서 해당 열에 대한 스타일, 속성등을 한번에 적용시킬 때 사용 -->
+    <colgroup>
+      <col>
+      <col>
+      <col>
+      <col style="background-color: yellow;">
+      <col>
+    </colgroup>
+    <!-- thead 태그: 표의 제목 열들을 묶는 그룹 태그 -->
+    <thead>
+      <!-- tr 태그: 표의 행, <th> or <td>를 자식 태그로 가진다. -->
+      <tr>
+        <!-- th 태그: 표의 제목열을 설정하는 태그 -->
+        <th>반</th>
+        <th>이름</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+      </tr>      
+    </thead>
+    <!-- tbody 태그: 표의 일반적인 데이터를 묶는 그룹 태그 -->
+    <tbody>
+      <tr>
+        <!-- td 태그: 표의 일반적인 데이터 열의 값을 설정하는 태그 -->
+        <td rowspan="2">2반</td>
+        <td>홍길동</td>
+        <td>90점</td>
+        <td>80점</td>
+        <td>70점</td>
+      </tr>
+      <tr>
+        <!-- <td>2반</td> -->
+        <td>전민규</td>
+        <td>90점</td>
+        <td>70점</td>
+        <td>50점</td>
+      </tr>
+    </tbody>
+    <!-- tfoot 태그: 표의 하단 영역을 묶는 그룹 태그 -->
+    <tfoot>
+      <tr>
+        <th colspan="2">평균</th>
+        <!-- <td></td> -->
+        <td>90점</td>
+        <td>75점</td>
+        <td>60점</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
