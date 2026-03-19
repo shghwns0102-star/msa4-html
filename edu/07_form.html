@@ -7,13 +7,87 @@
 </head>
 <body>
   <!-- form 태그: 유저가 입력한 정보를 제출하기 위하여 범위를 지정하는 태그 -->
-
+  <!-- action: 데이터를 어디로 보낼지 (URL) 지정하는 부분 -->
   <form action="" method="get">
-    <!-- input 태그: 데이터를 입력 받을 수 있는 태그 -->
-    <!-- /input이 없는 이유는 유저가 직접 입력하는 부분이라서 -->
-    <!-- maxlength: 글자수제한 -->
-    <!-- plcaeholder: 박스안 텍스트 기입 -->
-     <input type="text" maxlength="5" placeholder="아이디를 입력해주세요.">
+      <!-- fieldset 태그: 여러 컨트롤과 레이벨을 묶을 때 사용하는 태그 -->
+     <fieldset>
+      <!-- legend 태그: 필드셋태그의 콘텐츠를 설명하는 태그/제목 -->
+      <legend>로그인 폼</legend>
+      <!-- 
+        label 태그: 입력받는 필드를 설명할 때 사용하는 태그
+        input태그의 id속성값과 label태그의 for속성값이 동일하게 하여 연결가능
+      -->
+      <!-- readonly 속성: 입력은 보여주지만 수정은 못 하게 만드는 속성 -->
+      <input type="text" value="미리 넣어둔 값" name="readonlyEmail" readonly>
+      <br>
+      <label for="account">ID: </label> 
+      <!-- input 태그: 데이터를 입력 받을 수 있는 태그 -->
+      <!-- /input이 없는 이유는 유저가 직접 입력하는 부분이라서 -->
+      <!-- maxlength: 최대 글자 수 제한 -->
+      <!-- plcaeholder: 박스안 텍스트 기입 -->
+      <!-- minlength: 최소 글자 수 제한 -->
+      <!-- id: 해당 명령어의 고유한 입력값 -->
+      <!-- label의 코드 위치에 따라 화면에 나오는 출력 위치 변경 -->
+      <!-- required 필수 입력 설정 -->
+      <input type="text" id="account" required minlength="2" maxlength="5" placeholder="아이디를 입력해주세요."><br>
+      <label for="password">PW: </label>
+      <input type="password" id="password">
+      <br><br>
+
+      <!-- textarea 태그: 여러 줄을 입력하는 텍스트 영역을 만드는 태그 -->
+      <!-- name : 서버에 접근할때 이름(키) 설정 (백엔드와 통신) -->
+      <!-- name & id 굳이 필요하지 않으면 생성x -->
+      <!-- textarea 크기설정
+       cols : 가로줄(행) 길이 설정 / rows : 세로줄(열) 길이 설정 -->
+      <label for="info">기타</label>
+      <br>
+      <textarea name="info" id="info" cols="10" rows="5"></textarea>
+
+      <br><br>
+      <!-- select 태그: 드롭다운 목록을 만드는 태그 -->
+      <!-- option 태그: 드롭다운의 리스트를 만드는 태그
+           value 속성: 서버로 넘겨줄 값을 지정 (백엔드와 통신) 
+           selected 속성: 초기에 선택되어 보여질 항목을 지정 -->
+      <select name="rice" id="rice">
+        <option value="bab">밥</option>
+        <option value="donggas" selected>돈까스</option>
+      </select>
+    </fieldset>
+
+    <!-- button 태그: 버튼을 만들어 주는 태그 -->
+    <button type="submit">전송</button>
+    <button type="reset">초기화</button>
+    <button type="button">버튼</button>
+    <br><br>
+
+    <!-- 기타 input의 타입 -->
+    <input type="email" name="email" id="email">
+    <br>
+    <!-- min : 최솟값 설정 / max : 최댓값 설정 -->
+    <input type="number" name="number" id="number" min="0" max="5">
+    <br>
+    <!-- type="range": 길이바 -->
+    <input type="range" name="range" id="range" min="0" max="10">
+    <br>
+    <!-- type="date": 달력 -->
+    <input type="date" name="date" id="date">
+    <br>
+    <!-- checkbox 유의사항: name을 이용하여 그룹화 하기때문에 name을 일치 시켜줘야 한다. -->
+    <!-- checked : 초기 화면값에서 체크된채로 설정 -->
+    <input type="checkbox" name="fruit" id="banana" value="banana">
+    <label for="banana">바나나</label>
+    <input type="checkbox" name="fruit" id="sb" value="sb">
+    <label for="sb">딸기</label>
+    <br>
+    <!-- radio 유의사항: name을 이용하여 그룹화 하기때문에 name을 일치 시켜줘야 한다. -->
+    <input type="radio" name="foods" id="hamburger" value="hamburger" checked>
+    <label for="hamburger">햄버거</label>
+    <input type="radio" name="foods" id="dubbab" value="dubbab">
+    <label for="dubbab">덮밥</label>
+    <br>
+    <!-- hidden: 화면의 폼에는 보이지 않지만 사용자가 입력을 마치면 함께 서버로 전송되는 속성값 -->
+    <input type="hidden" name="hiddenTest" value="내가 보내줄 값">
+
   </form>
 </body>
 </html>
